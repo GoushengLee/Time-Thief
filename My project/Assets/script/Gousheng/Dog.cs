@@ -24,7 +24,13 @@ public class Dog : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             if (state == "Running") { SceneManager.LoadScene("Gameover"); }
-                
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (state == "Running") { SceneManager.LoadScene("Gameover"); }
         }
     }
     void Update()

@@ -22,5 +22,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.tag == "moveground")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

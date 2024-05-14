@@ -4674,7 +4674,7 @@ GameObject:
   - component: {fileID: 141785073}
   m_Layer: 0
   m_Name: MovBlocks6
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5417,7 +5417,7 @@ GameObject:
   - component: {fileID: 159405285}
   m_Layer: 0
   m_Name: MovBlocks4
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6292,7 +6292,7 @@ GameObject:
   - component: {fileID: 178642548}
   m_Layer: 0
   m_Name: MovBlocks14
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9564,7 +9564,7 @@ GameObject:
   - component: {fileID: 278510430}
   m_Layer: 0
   m_Name: MovBlocks7
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12574,7 +12574,7 @@ GameObject:
   - component: {fileID: 368563815}
   m_Layer: 0
   m_Name: MovBlocks8
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14901,7 +14901,7 @@ GameObject:
   - component: {fileID: 416724248}
   m_Layer: 0
   m_Name: MovBlocks10
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21383,6 +21383,7 @@ GameObject:
   - component: {fileID: 616663806}
   - component: {fileID: 616663805}
   - component: {fileID: 616663804}
+  - component: {fileID: 616663813}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -21472,6 +21473,7 @@ MonoBehaviour:
   smoothMovementTime: 0.3
   jumpForce: 20
   isGrounded: 1
+  moveground: 0
   currentVelocity: {x: 0, y: 0}
   targetVelocity: {x: 0, y: 0}
   iswalk: 0
@@ -21612,6 +21614,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &616663813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616663803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2af4f461584d643a32dcec6ab392c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerP: {fileID: 0}
 --- !u!1 &621191488
 GameObject:
   m_ObjectHideFlags: 0
@@ -25430,7 +25445,7 @@ GameObject:
   - component: {fileID: 714956012}
   m_Layer: 0
   m_Name: MovBlocks5
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31461,7 +31476,7 @@ GameObject:
   - component: {fileID: 857106359}
   m_Layer: 0
   m_Name: MovBlocks3
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33434,7 +33449,7 @@ GameObject:
   - component: {fileID: 904273465}
   m_Layer: 0
   m_Name: MovBlocks13
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36199,7 +36214,7 @@ GameObject:
   - component: {fileID: 1009160740}
   m_Layer: 0
   m_Name: MovBlocks11
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41072,7 +41087,7 @@ GameObject:
   - component: {fileID: 1144727548}
   m_Layer: 0
   m_Name: MovBlocks12
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48067,7 +48082,7 @@ GameObject:
   - component: {fileID: 1352893436}
   m_Layer: 0
   m_Name: MovBlocks2
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50300,7 +50315,7 @@ GameObject:
   - component: {fileID: 1433449609}
   m_Layer: 0
   m_Name: MovBlocks9
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62247,7 +62262,7 @@ GameObject:
   - component: {fileID: 1801361956}
   m_Layer: 0
   m_Name: MovBlocks1
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63854,7 +63869,7 @@ GameObject:
   - component: {fileID: 1834506329}
   m_Layer: 0
   m_Name: MovBlocks15
-  m_TagString: Ground
+  m_TagString: moveground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
