@@ -30,7 +30,7 @@ public class moveplat : MonoBehaviour
         if (collision.gameObject.CompareTag("moveground"))
         {
             transform.parent = playerP;
-
+          
         }
     }
 }

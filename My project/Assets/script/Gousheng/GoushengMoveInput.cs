@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GoushengMoveInput : MonoBehaviour
 {
-    public float moveSpeed = 5f; // ½ÇÉ«ÒÆ¶¯ËÙ¶È
-    public float smoothMovementTime = 0.3f; // ÒÆ¶¯Æ½»¬µÄÊ±¼ä
-    public float jumpForce = 10f; // ÌøÔ¾Á¦Á¿
-    public bool isGrounded,moveground; // ¼ì²é½ÇÉ«ÊÇ·ñÔÚµØÃæÉÏ
+    public float moveSpeed = 5f; // è§’è‰²ç§»åŠ¨é€Ÿåº¦
+    public float smoothMovementTime = 0.3f; // ç§»åŠ¨å¹³æ»‘çš„æ—¶é—´
+    public float jumpForce = 10f; // è·³è·ƒåŠ›é‡
+    public bool isGrounded,moveground; // æ£€æŸ¥è§’è‰²æ˜¯å¦åœ¨åœ°é¢ä¸Š
     private Rigidbody2D rb;
-    public Vector2 currentVelocity; // µ±Ç°ËÙ¶È£¬ÓÃÓÚÆ½»¬ÒÆ¶¯µÄ¼ÆËã
-    public Vector2 targetVelocity; // Ä¿±êËÙ¶È
+    public Vector2 currentVelocity; // å½“å‰é€Ÿåº¦ï¼Œç”¨äºå¹³æ»‘ç§»åŠ¨çš„è®¡ç®—
+    public Vector2 targetVelocity; // ç›®æ ‡é€Ÿåº¦
     public bool iswalk;
     public SpriteRenderer playerSprite;
 
@@ -18,7 +18,7 @@ public class GoushengMoveInput : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // »ñÈ¡ Rigidbody2D ×é¼ş
+        rb = GetComponent<Rigidbody2D>(); // è·å– Rigidbody2D ç»„ä»¶
         playerSprite = rb.GetComponent<SpriteRenderer>();
         FaceDir = "Right";
         isGrounded = true;
@@ -27,23 +27,23 @@ public class GoushengMoveInput : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        // »ñÈ¡Ë®Æ½ÊäÈë£¨A/D¼ü»ò×óÓÒ¼ıÍ·¼ü£©
+        // è·å–æ°´å¹³è¾“å…¥ï¼ˆA/Dé”®æˆ–å·¦å³ç®­å¤´é”®ï¼‰
 
-        // ÉèÖÃÄ¿±êËÙ¶È
+        // è®¾ç½®ç›®æ ‡é€Ÿåº¦
         targetVelocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
-        // ¼ì²âÊÇ·ñ°´ÏÂÌøÔ¾¼ü²¢ÇÒ½ÇÉ«ÔÚµØÃæÉÏ
+        // æ£€æµ‹æ˜¯å¦æŒ‰ä¸‹è·³è·ƒé”®å¹¶ä¸”è§’è‰²åœ¨åœ°é¢ä¸Š
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse); // Ê¹½ÇÉ«ÌøÔ¾
-            isGrounded = false; // ½ÇÉ«ÒÑ¾­ÌøÔ¾£¬²»ÔÙÔÚµØÃæÉÏ
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse); // ä½¿è§’è‰²è·³è·ƒ
+            isGrounded = false; // è§’è‰²å·²ç»è·³è·ƒï¼Œä¸å†åœ¨åœ°é¢ä¸Š
         }
-        if (horizontalInput > 0) // ÏòÓÒÒÆ¶¯
+        if (horizontalInput > 0) // å‘å³ç§»åŠ¨
         {
             FaceDir = "Right";
 
         }
-        else if (horizontalInput < 0) // Ïò×óÒÆ¶¯
+        else if (horizontalInput < 0) // å‘å·¦ç§»åŠ¨
         {
             FaceDir = "Left";
         }
@@ -59,21 +59,22 @@ public class GoushengMoveInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Ê¹ÓÃÏßĞÔ²åÖµÆ½»¬µØµ÷ÕûËÙ¶È
+        // ä½¿ç”¨çº¿æ€§æ’å€¼å¹³æ»‘åœ°è°ƒæ•´é€Ÿåº¦
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity, smoothMovementTime);
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground")) // È·±£ÓëµØÃæ½Ó´¥
+        if (collision.gameObject.CompareTag("Ground")) // ç¡®ä¿ä¸åœ°é¢æ¥è§¦
         {
             isGrounded = true;
            
         }
         if (collision.gameObject.CompareTag("moveground"))
         {
+           // transform.parent = collision.transform;
             isGrounded = true;
         }
-        
+
     }
     void OnCollisionExit2D(Collision2D collision)
     {
@@ -84,7 +85,9 @@ public class GoushengMoveInput : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("moveground"))
         {
-            isGrounded = false;
+          //  transform.parent = playerP;
+           isGrounded = false;
+
         }
     }
 
