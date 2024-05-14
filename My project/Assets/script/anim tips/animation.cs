@@ -144,7 +144,7 @@ public class animation : MonoBehaviour
         }
         if (dogB != null)
         {
-            if (enemy.movRight == true)
+            if (enemy2.movRight == true)
             {
                 dogB.GetComponent<SpriteRenderer>().flipX = true;
             }
@@ -153,7 +153,7 @@ public class animation : MonoBehaviour
                 dogB.GetComponent<SpriteRenderer>().flipX = false;
 
             }
-            if (enemy.state == "Frozen")
+            if (enemy2.state == "Frozen")
             {
                 dogB.GetComponent<Animator>().enabled = false;
             }

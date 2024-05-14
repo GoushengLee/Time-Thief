@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - Ground
+  - firepoint
+  - quit
+  - jump
+  - moveground
   layers:
   - Default
   - TransparentFX
