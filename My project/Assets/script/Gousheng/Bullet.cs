@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // µ±×Óµ¯ÓëÈÎºÎÎïÌåÅö×²Ê±Ïú»Ù×Óµ¯
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" && collision.gameObject.tag == "moveground")
         {
             Destroy(this.gameObject);
         }
