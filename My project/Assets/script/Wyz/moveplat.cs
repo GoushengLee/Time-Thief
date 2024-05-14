@@ -5,11 +5,12 @@ using UnityEngine;
 public class moveplat : MonoBehaviour
 {
     public Transform playerP;
-    GoushengMoveInput moveInput;
+    public GoushengMoveInput moveInput;
     // Start is called before the first frame update
     void Start()
     {
         playerP = null;
+        moveInput = GetComponent<GoushengMoveInput>();
     }
 
     // Update is called once per frame

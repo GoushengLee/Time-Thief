@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     public int Level;
     public AudioSource bgmAduio;
     public Slider VolumeSlider;
+    public enum PlayerState { win,lose,dead }
+    public PlayerState Pstate;   
+   
     // Start is called before the first frame update
 
 
@@ -25,6 +29,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         Setting = true;
         GameState = "GameOn";
+        Level = 0;
     }
 
     // Update is called once per frame
@@ -50,8 +55,11 @@ public class GameManager : MonoBehaviour
                 GameState = "GameOn";
             }
 
+            SceneManager.LoadScene("Gameover");
           
         }
+       
+        
         
     }
  

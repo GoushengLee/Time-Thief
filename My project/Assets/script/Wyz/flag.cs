@@ -10,20 +10,19 @@ public class flag : MonoBehaviour
     public bool open;
     public Sprite OpenImg, CloseImg;
     public int GameLevel, KeyNum, TotKey;
-    public enum flagState { win, lose, gameon }
-    flagState flagstate;
+
     // Start is called before the first frame update
     void Start()
     {
-        flagstate = flagState.gameon;
         open = false;
         KeyNum = 0;
-        //GameLevel = 1;
+        GameLevel = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameLevel = GM.Level;
         open = CanOpen();
         if (open == true)
         {
@@ -97,8 +96,7 @@ public class flag : MonoBehaviour
     {
         if (collision.gameObject.tag== "Player" && open == true)
         {
-          flagstate = flagState.win;
-            print("jump");
+
          Invoke("loadScence", 3f);   
         }
     }
