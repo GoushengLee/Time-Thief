@@ -7,7 +7,7 @@ public class GoushengMoveInput : MonoBehaviour
     public float moveSpeed = 5f; // 角色移动速度
     public float smoothMovementTime = 0.3f; // 移动平滑的时间
     public float jumpForce = 10f; // 跳跃力量
-    public bool isGrounded = true; // 检查角色是否在地面上
+    public bool isGrounded,moveground; // 检查角色是否在地面上
     private Rigidbody2D rb;
     public Vector2 currentVelocity; // 当前速度，用于平滑移动的计算
     public Vector2 targetVelocity; // 目标速度
@@ -21,7 +21,7 @@ public class GoushengMoveInput : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // 获取 Rigidbody2D 组件
         playerSprite = rb.GetComponent<SpriteRenderer>();
         FaceDir = "Right";
-
+        isGrounded = true;
     }
 
     void Update()
@@ -67,13 +67,16 @@ public class GoushengMoveInput : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) // 确保与地面接触
         {
             isGrounded = true;
+           
         }
+        
     }
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-           isGrounded = false;
+            isGrounded = false;
+
         }
     }
 
