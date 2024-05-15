@@ -21627,6 +21627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerP: {fileID: 0}
+  moveInput: {fileID: 0}
 --- !u!1 &621191488
 GameObject:
   m_ObjectHideFlags: 0
@@ -24881,6 +24882,9 @@ MonoBehaviour:
   GameLevel: 3
   KeyNum: 0
   TotKey: 0
+  targetKey: 3
+  UI: {fileID: 0}
+  textUI: {fileID: 0}
 --- !u!1 &707232983
 GameObject:
   m_ObjectHideFlags: 0

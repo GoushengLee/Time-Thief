@@ -17,7 +17,6 @@ public class flag : MonoBehaviour
     {
         open = false;
         KeyNum = 0;
-        targetKey = TotKey;
         //GameLevel = 1;
     }
 
