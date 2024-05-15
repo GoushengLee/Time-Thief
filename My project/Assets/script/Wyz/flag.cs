@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;  // 引入TextMeshPro命名空间
 public class flag : MonoBehaviour
 {
     public GameObject Player, key1, key2,key3;
     public GameManager GM;
     public bool open;
     public Sprite OpenImg, CloseImg;
-    public int GameLevel, KeyNum, TotKey;
+    public int GameLevel, KeyNum, TotKey,targetKey;
     public GameObject UI;
+    public TextMeshProUGUI textUI;
     // Start is called before the first frame update
     void Start()
     {
         open = false;
         KeyNum = 0;
+        targetKey = TotKey;
         //GameLevel = 1;
     }
 
@@ -33,7 +35,7 @@ public class flag : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = CloseImg;
         }
-
+        textUI.text = targetKey.ToString();
     }
     bool CanOpen()
     {
@@ -64,6 +66,7 @@ public class flag : MonoBehaviour
             if (key1.GetComponent<SpriteRenderer>().enabled == true)
             {
                 KeyNum += 1;
+                targetKey -= 1;
             }
             key1.GetComponent<SpriteRenderer>().enabled = false;
         }
@@ -74,6 +77,7 @@ public class flag : MonoBehaviour
                 if (key2.GetComponent<SpriteRenderer>().enabled == true)
                 {
                     KeyNum += 1;
+                    targetKey -= 1;
                 }
                 key2.GetComponent<SpriteRenderer>().enabled = false;
             }
@@ -86,6 +90,7 @@ public class flag : MonoBehaviour
                 if (key3.GetComponent<SpriteRenderer>().enabled == true)
                 {
                     KeyNum += 1;
+                    targetKey -= 1;
                 }
                 key3.GetComponent<SpriteRenderer>().enabled = false;
             }

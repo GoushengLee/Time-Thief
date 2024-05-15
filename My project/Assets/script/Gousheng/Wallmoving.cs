@@ -33,8 +33,8 @@ public class Wallmoving : MonoBehaviour
 
             if (movRight == false) { this.transform.position = Vector2.MoveTowards(this.transform.position, stopP0.position, speed * Time.deltaTime);}
             if (movRight == true) { this.transform.position = Vector2.MoveTowards(this.transform.position, stopP1.position, speed * Time.deltaTime); }
-            if (this.transform.position.x == stopP0.transform.position.x) { movRight=!movRight; }
-            if (this.transform.position.x == stopP1.transform.position.x) { movRight = !movRight; }
+            if (this.transform.position == stopP0.transform.position) { movRight=!movRight; }
+            if (this.transform.position == stopP1.transform.position) { movRight = !movRight; }
         }
         if (state == "Frozen")
         {
