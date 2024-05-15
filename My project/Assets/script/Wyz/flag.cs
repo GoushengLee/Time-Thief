@@ -109,13 +109,11 @@ public class flag : MonoBehaviour
                     SceneManager.LoadScene("level_2");
                     GameLevel = 2;
                 GameManager.Instance.Level = 2;
-                print("1");
                     break;
                 case 2:
-                    SceneManager.LoadScene(3);
+                    SceneManager.LoadScene("level_3");
                     GameLevel = 3;
                 GameManager.Instance.Level = 3;
-                print("2");
                 break;
                 case 3:
 
