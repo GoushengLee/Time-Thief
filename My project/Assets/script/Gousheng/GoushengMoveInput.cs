@@ -69,6 +69,10 @@ public class GoushengMoveInput : MonoBehaviour
             isGrounded = true;
            
         }
+        if (collision.gameObject.CompareTag("moveground"))
+        {
+            isGrounded = true;
+        }
         
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -77,6 +81,10 @@ public class GoushengMoveInput : MonoBehaviour
         {
             isGrounded = false;
 
+        }
+        if (collision.gameObject.CompareTag("moveground"))
+        {
+            isGrounded = false;
         }
     }
 

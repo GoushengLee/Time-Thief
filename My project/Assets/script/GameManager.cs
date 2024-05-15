@@ -16,8 +16,10 @@ public class GameManager : MonoBehaviour
     public AudioSource bgmAduio;
     public Slider VolumeSlider;
     public enum PlayerState { win,lose,dead }
-    public PlayerState Pstate;   
-   
+    public PlayerState Pstate;
+    public static GameManager Instance { get; private set; }
+
+
     // Start is called before the first frame update
 
 
@@ -29,15 +31,24 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         Setting = true;
         GameState = "GameOn";
-        Level = 0;
+      //  Level = 1 ;
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // 保持在场景切换时不被销毁
+            GameManager.Instance.Level = 1;
+        }
+
     }
 
     // Update is called once per frame
     private void Update()
     {
+      
         if (VolumeSlider != null)
         { 
-        bgmAduio.volume = VolumeSlider.value;
+         bgmAduio.volume = VolumeSlider.value;
         }
         // gunfire animation
         // UI Open
@@ -55,12 +66,10 @@ public class GameManager : MonoBehaviour
                 GameState = "GameOn";
             }
 
-            SceneManager.LoadScene("Gameover");
+          //  SceneManager.LoadScene("Gameover");
           
         }
-       
-        
-        
     }
- 
+
+
 }

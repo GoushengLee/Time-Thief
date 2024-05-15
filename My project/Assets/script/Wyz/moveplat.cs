@@ -23,7 +23,6 @@ public class moveplat : MonoBehaviour
         if (collision.gameObject.CompareTag("moveground"))
         {
             transform.parent = collision.transform;
-            moveInput.isGrounded = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -31,7 +30,6 @@ public class moveplat : MonoBehaviour
         if (collision.gameObject.CompareTag("moveground"))
         {
             transform.parent = playerP;
-            moveInput.isGrounded = false;
 
         }
     }

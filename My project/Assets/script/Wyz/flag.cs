@@ -10,20 +10,21 @@ public class flag : MonoBehaviour
     public bool open;
     public Sprite OpenImg, CloseImg;
     public int GameLevel, KeyNum, TotKey;
-
+    public GameObject UI;
     // Start is called before the first frame update
     void Start()
     {
         open = false;
         KeyNum = 0;
-        GameLevel = 1;
+        //GameLevel = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameLevel = GM.Level;
+      // GM.Level = GameLevel ;
         open = CanOpen();
+        keysc();
         if (open == true)
         {
             GetComponent<SpriteRenderer>().sprite = OpenImg;
@@ -32,7 +33,6 @@ public class flag : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = CloseImg;
         }
-        keysc();
 
     }
     bool CanOpen()
@@ -96,23 +96,27 @@ public class flag : MonoBehaviour
     {
         if (collision.gameObject.tag== "Player" && open == true)
         {
-
-         Invoke("loadScence", 3f);   
+            UI.SetActive(true);
         }
     }
 
-    void loadScence()
-    { 
-            switch (GameLevel) // load scence
+    public void loadScence()
+    {
+      
+        switch (GameLevel) // load scence
             {
-                case 1:
-                    SceneManager.LoadScene(3);
+                case  1:
+                    SceneManager.LoadScene("level_2");
                     GameLevel = 2;
+                GameManager.Instance.Level = 2;
+                print("1");
                     break;
                 case 2:
-                    SceneManager.LoadScene("level_3");
+                    SceneManager.LoadScene(3);
                     GameLevel = 3;
-                    break;
+                GameManager.Instance.Level = 3;
+                print("2");
+                break;
                 case 3:
 
                     break;

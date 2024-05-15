@@ -10,6 +10,7 @@ TagManager:
   - quit
   - jump
   - moveground
+  - restart
   layers:
   - Default
   - TransparentFX

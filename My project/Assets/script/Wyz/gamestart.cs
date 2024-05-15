@@ -15,7 +15,7 @@ public class gamestart : MonoBehaviour
         sceneIndex = 2;
         if (flag != null)
         { 
-        nowscence = flag.GameLevel;
+        // flag.GameLevel = nowscence;
         }
     }
 
