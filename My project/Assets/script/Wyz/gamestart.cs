@@ -9,14 +9,11 @@ public class gamestart : MonoBehaviour
 
     public int sceneIndex,nowscence;
     public flag flag;
+    public GameObject UI;
     // Start is called before the first frame update
     void Start()
     {
         sceneIndex = 2;
-        if (flag != null)
-        { 
-        // flag.GameLevel = nowscence;
-        }
     }
 
     // Update is called once per frame
@@ -35,9 +32,13 @@ public class gamestart : MonoBehaviour
         {
             Application.Quit();
         }
-        if (CompareTag("restart"))
+        if (CompareTag("sett"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (UI != null)
+            { 
+                 UI.SetActive(true);
+            }
         }
+  
     }
 }

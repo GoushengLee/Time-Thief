@@ -11,6 +11,7 @@ TagManager:
   - jump
   - moveground
   - restart
+  - sett
   layers:
   - Default
   - TransparentFX
