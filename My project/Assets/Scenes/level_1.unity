@@ -5715,7 +5715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &3495548589234634192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7715,7 +7715,7 @@ PrefabInstance:
     - target: {fileID: 4461170074906701786, guid: c07bf6d0b80d64a48b43c1418c6ee735, type: 3}
       propertyPath: UI
       value: 
-      objectReference: {fileID: 9126636014936977686}
+      objectReference: {fileID: 3301548758969521793}
     - target: {fileID: 4461170074906701786, guid: c07bf6d0b80d64a48b43c1418c6ee735, type: 3}
       propertyPath: key1
       value: 
@@ -8351,7 +8351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &9164976219561882845
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Ëø¶¨60Ö¡
+        // é”å®š60å¸§
         Application.targetFrameRate = 60;
         Setting = true;
         GameState = "GameOn";
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ±£³ÖÔÚ³¡¾°ÇĞ»»Ê±²»±»Ïú»Ù
+            DontDestroyOnLoad(gameObject); // ä¿æŒåœ¨åœºæ™¯åˆ‡æ¢æ—¶ä¸è¢«é”€æ¯
             GameManager.Instance.Level = 1;
         }
 
