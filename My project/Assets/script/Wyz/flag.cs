@@ -102,6 +102,11 @@ public class flag : MonoBehaviour
         {
             UI.SetActive(true);
         }
+        if (collision.gameObject.tag == "Player" && GameLevel == 3 && open == true)
+        {
+            SceneManager.LoadScene("Credit");
+
+        }
     }
 
     public void loadScence()

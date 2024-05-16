@@ -52,23 +52,20 @@ public class GameManager : MonoBehaviour
         }
         // gunfire animation
         // UI Open
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // Open UI setting
-            Setting = !Setting;
-            if (Setting == true) 
-            {
-               GameState = "Pause";
-            }
-            //Close UI setting
-            if (Setting == false)
-            {
-                GameState = "GameOn";
-            }
 
-          //  SceneManager.LoadScene("Gameover");
-          
+        if (SceneManager.GetActiveScene().name == "Credit")
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene("level_1");
+
+            }
         }
+
     }
 
 
